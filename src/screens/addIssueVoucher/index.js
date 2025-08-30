@@ -261,14 +261,12 @@ const AddIssueVoucher = (props) => {
         
             if (response.ok) {
               console.log('Success:', data);
-              if(data?.success){
+             if (data?.success) {
                 ToastAndroid.show('Voucher added successfully', ToastAndroid.SHORT);
-                // Alert.alert("Record added successfully");
-                // resetForm(); 
+                resetForm(); // ✅ form clear ho jayega
                 setLoading(false);
-                props.navigation.navigate("Welcome");
-
-              }else{
+                }
+              else{
                 ToastAndroid.show('Server failed', ToastAndroid.SHORT);
                 setLoading(false);
               }
